@@ -1,5 +1,6 @@
 package com.example.myproject;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,15 +18,6 @@ import java.util.Date;
 //@ComponentScan
 @SpringBootApplication
 public class Application {
-//    @RequestMapping("/")
-//    String home() {
-//        return "Hello World!";
-//    }
-//
-//    @RequestMapping("/now")
-//    String hehe() {
-//        return "现在时间：" + (new Date()).toLocaleString();
-//    }
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
