@@ -6,7 +6,6 @@ import com.example.myproject.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,11 +18,11 @@ import java.util.Date;
  */
 @RestController
 @ConfigurationProperties(prefix = "author")
-public class HelloAction {
+public class HelloController {
     private String name ;
     private String age;
 
-    private Logger logger = Logger.getLogger(HelloAction.class);
+    private Logger logger = Logger.getLogger(HelloController.class);
     @Autowired
     private UserService userService;
 
