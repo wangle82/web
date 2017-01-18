@@ -3,6 +3,7 @@ package com.example.myproject.action;
 import com.example.myproject.mapper.UserMapper;
 import com.example.myproject.model.User;
 import com.example.myproject.service.UserService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -20,13 +21,14 @@ public class HelloAction {
     private String name ;
     private String age;
 
+    private Logger logger = Logger.getLogger(HelloAction.class);
     @Autowired
     private UserService userService;
 
     @RequestMapping("/")
     String home() {
         User userInfo = userService.getUserInfo();
-        System.out.println("userInfo = " + userInfo);
+        logger.info(userInfo.getName() + " " + userInfo.getAge() );
         return " 现在时间：" + (new Date()).toLocaleString() + " Hello World!" + "name = "+name + " age = " + age;
     }
 
